@@ -1,4 +1,4 @@
-import { getPageTitle, parsePageId } from 'notion-utils'
+import { parsePageId } from 'notion-utils'
 
 import * as config from './config'
 import { getPage } from './notion'
@@ -23,7 +23,6 @@ export const oembed = async ({
   // TODO: handle errors gracefully
 
   const page = await getPage(pageId)
-  const pageTitle = getPageTitle(page)
   // if (pageTitle) title = pageTitle
 
   const user = page.notion_user[Object.keys(page.notion_user)[0]]?.value

@@ -3,7 +3,6 @@ import type { GetServerSideProps } from 'next'
 import { ExtendedRecordMap } from 'notion-types'
 import {
   getBlockParentPage,
-  getBlockTitle,
   getPageProperty,
   idToUuid
 } from 'notion-utils'
