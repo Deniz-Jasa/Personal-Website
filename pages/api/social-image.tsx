@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { NextRequest } from 'next/server';
 import { ImageResponse } from '@vercel/og';
 
 const interRegularFontP = fetch(
@@ -14,7 +13,7 @@ export const config = {
   runtime: 'experimental-edge'
 };
 
-export default async function OGImage(req: NextRequest) {
+export default async function OGImage() {
   const [interRegularFont, interBoldFont] = await Promise.all([
     interRegularFontP,
     interBoldFontP
