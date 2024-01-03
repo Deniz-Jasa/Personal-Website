@@ -49,11 +49,15 @@
 }
 
 .notion-nav-header-rhs {
-  gap: 0.5rem;
+  gap: 0rem;
+}
+
+.notion-header .notion-nav-header {
+  gap: 0px;
 }
 
 .notion-gallery-grid {
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 6vmin;
   gap: 6vmin;
 }
@@ -204,29 +208,6 @@
 }
 
 
-/* Shows the hamburger menu on smaller screens */
-@media screen and (max-width: 768px) {
-
-  /* Adjust the pixel value based on your design */
-  .hamburger-menu {
-    display: block;
-    /* Shows the hamburger menu */
-  }
-
-  .notion-nav-header-rhs-breadcrumbs {
-    display: none;
-  }
-
-  .notion-nav-header-rhs {
-    display: none;
-    /* Hides the menu items by default */
-  }
-
-  .notion-nav-header-rhs.active {
-    display: block;
-    /* Shows the menu items when active */
-  }
-}
 
 
 .notion-page-cover-wrapper,
@@ -414,3 +395,5 @@
 .notion-block-260baa77f1e1428b97fb14ac99c7c385 {
   display: none;
 }
+
+/* Styles for smaller screens, where you want to apply text truncation */

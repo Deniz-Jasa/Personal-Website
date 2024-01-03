@@ -57,10 +57,6 @@ export default siteConfig({
       pageId: '352c609b8532462ab0c247a61287ebc2'
     },
     {
-      title: 'links',
-      pageId: '596c528747fd49c28edb8b57b0ae4659'
-    },
-    {
       title: 'projects',
       pageId: 'b9b8250ee1964bc9bee61dfeef2f9a02'
     }
