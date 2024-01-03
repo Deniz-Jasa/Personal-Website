@@ -406,10 +406,13 @@
     display: none;
   }
 
-
+  .notion-collection-page-properties {
+    margin-top: 70px;
+  }
 
 }
 
 .notion-list-collection{
   margin-top: 20px;
 }
+
