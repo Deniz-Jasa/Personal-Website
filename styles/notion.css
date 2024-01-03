@@ -397,3 +397,19 @@
 }
 
 /* Styles for smaller screens, where you want to apply text truncation */
+
+
+@media only screen and (max-width: 500px) {
+
+  .notion-property-select,
+  .notion-property-multi_select {
+    display: none;
+  }
+
+
+
+}
+
+.notion-list-collection{
+  margin-top: 20px;
+}
