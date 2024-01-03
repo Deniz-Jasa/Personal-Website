@@ -10,11 +10,11 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Deniz Jasarbasic',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
+  domain: 'denizjasarbasic.com',
   author: 'Deniz Jasarbasic',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description: "Deniz Jasarbasic's Personal Site",
 
   // social usernames (optional)
   twitter: 'deniz-jasarbasic',
