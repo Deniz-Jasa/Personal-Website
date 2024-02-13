@@ -41,7 +41,7 @@ const ResumeButton = () => {
   }, []);
 
   // URL to your resume in Google Drive for viewing
-  const resumeViewUrl = 'https://drive.google.com/file/d/1HetH2BFa2te5b4JcjJiSFEJ8ShMHh3r0/view?usp=sharing';
+  const resumeViewUrl = 'https://drive.google.com/file/d/1AowRy2DiYmSRrhuuMzmoU34cKCutGjwj/view?usp=sharing';
 
   const viewResume = () => {
     window.open(resumeViewUrl, '_blank');
