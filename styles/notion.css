@@ -11,6 +11,10 @@
   --notion-max-width: 720px;
   --notion-header-height: 54px;
 }
+.dark-mode {
+  --bg-color: #181818;
+}
+
 
 .notion-frame {
   padding: 0;
