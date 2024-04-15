@@ -102,6 +102,11 @@
   box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);
 }
 
+.notion-header .breadcrumb:not(.active):hover {
+  background-color: rgba(67, 67, 67, 0.3);
+}
+
+
 .notion-collection-card-cover {
   border-bottom: 0 none;
   transition: filter 150ms linear;
@@ -260,7 +265,7 @@
 .notion-link:hover {
   border-bottom-color: transparent;
 
-  background-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);
+  background-image: linear-gradient(90.68deg, #0084C1 0.26%, #0084C1 102.37%);
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 100% 0.1rem;
@@ -388,7 +393,7 @@
 }
 
 .notion-bookmark:hover {
-  border-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);
+  border-image: linear-gradient(90.68deg, #0084C1 0.26%, #0084C1 102.37%);
   border-image-slice: 1;
 }
 
