@@ -136,7 +136,6 @@ export const NotionPageHeader: React.FC<{
             href="/"
             className={cs(styles.mobileNavLink, 'breadcrumb', 'button')}
             onClick={toggleMenu}
-            style={{ transitionDelay: `${(navigationLinks?.length || 0) * 0.1}s` }}
             rel="noopener noreferrer"
           >
             home
@@ -154,7 +153,6 @@ export const NotionPageHeader: React.FC<{
                   key={index}
                   className={cs(styles.mobileNavLink, 'breadcrumb', 'button')}
                   onClick={toggleMenu}
-                  style={{ transitionDelay: `${index * 0.1}s` }}
                 >
                   {link.title}
                 </LinkComponent>
@@ -165,7 +163,6 @@ export const NotionPageHeader: React.FC<{
             href={resumeViewUrl}
             className={cs(styles.mobileNavLink, 'breadcrumb', 'button')}
             onClick={toggleMenu}
-            style={{ transitionDelay: `${(navigationLinks?.length || 0) * 0.1}s` }}
             target="_blank"
             rel="noopener noreferrer"
           >
