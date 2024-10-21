@@ -75,12 +75,6 @@ export const NotionPageHeader: React.FC<{
     document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden'
   }
 
-  React.useEffect(() => {
-    return () => {
-      document.body.style.overflow = 'auto'
-    }
-  }, [])
-
   return (
     <>
       <header className='notion-header'>
