@@ -312,8 +312,8 @@
 
 .closeButton {
   position: absolute;
-  top: 2rem;
-  right: 1rem;
+  top: 40px;
+  right: 40px;
   background: none;
   border: none;
   font-size: 2rem;
@@ -350,7 +350,7 @@
   .themeToggle {
     position: absolute;
     font-size: 1.5rem;
-    top: 2.2rem;
-    left: 2.2rem;
+    top: 45px;
+    left: 45px;
   }
 }
