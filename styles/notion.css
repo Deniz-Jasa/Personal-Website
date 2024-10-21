@@ -18,13 +18,13 @@
   }
 }
 
+:root {
+  --mobile-bg-menu: hsla(0, 0%, 100%, 0.8);
+}
+
 .dark-mode {
   --bg-color: #181818;
   --mobile-bg-menu: hsla(0, 0%, 9.5%, 0.9);
-}
-
-.light-mode {
-  --mobile-bg-menu: hsla(0, 0%, 100%, 0.8);
 }
 
 .notion-frame {
