@@ -458,3 +458,20 @@
 .notion-list-collection {
   margin-top: 20px;
 }
+
+/* img {
+  filter: blur(40px);
+  transition: filter 1s ease-out;
+  animation: unblur 2s forwards;
+  animation-delay: 2s;
+  overflow: hidden;
+}
+
+@keyframes unblur {
+  from {
+    filter: blur(40px);
+  }
+  to {
+    filter: blur(0px);
+  }
+} */
