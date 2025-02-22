@@ -313,7 +313,7 @@
 .closeButton {
   position: absolute;
   top: 40px;
-  right: 5px;
+  right: 10px;
   background: none;
   border: none;
   font-size: 2rem;
