@@ -373,8 +373,7 @@
 
 /* if you don't want rounded page icon images, remove this */
 .notion-page-icon-hero.notion-page-icon-image {
-  border-radius: 50%;
-  box-shadow: 0 8px 40px 0 rgba(245, 17, 17, 0.21);
+  box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.21);
 }
 
 .notion-page-icon-hero.notion-page-icon-image span,
@@ -453,6 +452,14 @@
     margin-left: 9px;
   }
 
+}
+
+.notion-property.notion-property-date {
+  margin-top: 30px;
+}
+
+.notion-collection-page-properties {
+  margin-top: 0px;
 }
 
 .notion-list-collection {
