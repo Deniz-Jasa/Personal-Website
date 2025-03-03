@@ -12,7 +12,7 @@ import { useDarkMode } from '@/lib/use-dark-mode'
 
 import styles from './styles.module.css'
 
-const resumeViewUrl = 'https://drive.google.com/file/d/1bJ9foMnjMYkUINtPT9JoOeKlPINdQwsU/view?usp=drivesdk';
+const resumeViewUrl = 'https://drive.google.com/file/d/1Up8Y15SmF0uR-OhmqDtJesIwdO58kk07/view?usp=sharing';
 
 const ToggleThemeButton = () => {
   const [hasMounted, setHasMounted] = React.useState(false)
