@@ -132,6 +132,15 @@
   padding: 10px;
 }
 
+.notion-list-body {
+  border-top: none;
+  margin-top: -15px;
+}
+
+.notion-page-icon-inline .notion-page-icon-image {
+  display: none;
+}
+
 /* only target safari */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
 
@@ -387,7 +396,7 @@
 }
 
 .dark-mode .notion-header {
-  background: hsla(0, 0%, 9.5%, 0.9);
+  background: hsla(0, 0%, 9.5%, 0.5);
   /* box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.1); */
   backdrop-filter: blur(15px);
 }
@@ -413,7 +422,55 @@
 }
 
 /* Styles for smaller screens, where you want to apply text truncation */
+.notion-collection-page-properties {
+  display: none;
+}
 
+.notion-text.notion-block-1fe2da4f919f80008b25f6c4a27fd46d {
+  font-size: 13px;
+  color: #666 !important;
+  margin-bottom: -20px;
+}
+
+.notion-text.notion-block-1fe2da4f919f808c92acc001f904509a {
+  font-size: 13px;
+  margin-bottom: -10px;
+  color: #666 !important;
+}
+
+.dark-mode .notion-text.notion-block-1fe2da4f919f80008b25f6c4a27fd46d {
+  color: #aaa !important;
+}
+
+.dark-mode .notion-text.notion-block-1fe2da4f919f808c92acc001f904509a {
+  color: #aaa !important;
+}
+
+/* Make underlines subtle and grey for specific text blocks */
+.notion-text.notion-block-1fe2da4f919f80008b25f6c4a27fd46d .notion-link,
+.notion-text.notion-block-1fe2da4f919f808c92acc001f904509a .notion-link {
+  border-bottom: 1px solid #ccc !important;
+  background-image: none !important;
+  background-size: 0 !important;
+  text-decoration: none !important;
+}
+
+.notion-text.notion-block-1fe2da4f919f80008b25f6c4a27fd46d .notion-link:hover,
+.notion-text.notion-block-1fe2da4f919f808c92acc001f904509a .notion-link:hover {
+  border-bottom-color: #999 !important;
+  background-image: none !important;
+  background-size: 0 !important;
+}
+
+.dark-mode .notion-text.notion-block-1fe2da4f919f80008b25f6c4a27fd46d .notion-link,
+.dark-mode .notion-text.notion-block-1fe2da4f919f808c92acc001f904509a .notion-link {
+  border-bottom-color: #555 !important;
+}
+
+.dark-mode .notion-text.notion-block-1fe2da4f919f80008b25f6c4a27fd46d .notion-link:hover,
+.dark-mode .notion-text.notion-block-1fe2da4f919f808c92acc001f904509a .notion-link:hover {
+  border-bottom-color: #777 !important;
+}
 
 @media only screen and (max-width: 500px) {
 
@@ -430,9 +487,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    max-width: 240px;
+    max-width: 280px;
     display: block;
   }
+  
 
   .notion-collection-header-title {
     overflow: hidden;
@@ -466,19 +524,154 @@
   margin-top: 20px;
 }
 
-/* img {
-  filter: blur(40px);
-  transition: filter 1s ease-out;
-  animation: unblur 2s forwards;
-  animation-delay: 2s;
-  overflow: hidden;
+/* Remove underlines from blog post titles in list collection */
+.notion-list-collection .notion-page-link,
+.notion-list-collection .notion-page-link .notion-page-title-text {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  background-image: none !important;
+  background-size: 0 !important;
 }
 
-@keyframes unblur {
-  from {
-    filter: blur(40px);
-  }
-  to {
-    filter: blur(0px);
-  }
-} */
+.notion-list-collection .notion-page-link:hover,
+.notion-list-collection .notion-page-link:focus,
+.notion-list-collection .notion-page-link .notion-page-title-text:hover,
+.notion-list-collection .notion-page-link .notion-page-title-text:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  background-image: none !important;
+  background-size: 0 !important;
+}
+
+/* Hide page icons in list collection */
+.notion-list-collection .notion-page-icon-inline,
+.notion-list-collection .notion-page-icon-inline .notion-page-icon-image,
+.notion-list-collection .notion-page-icon {
+  display: none !important;
+}
+
+/* Make blog post titles lighter and greyish */
+.notion-list-collection .notion-page-link {
+  padding: 10px 0 !important;
+  margin-bottom: 8px !important;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.notion-list-collection .notion-page-link .notion-page-title-text {
+  color: #666 !important;
+  font-weight: 400 !important;
+}
+
+.dark-mode .notion-list-collection .notion-page-link .notion-page-title-text {
+  color: #aaa !important;
+}
+
+.notion-list-collection .notion-page-link:hover {
+  background-color: transparent !important;
+}
+
+.notion-list-collection .notion-page-link:hover .notion-page-title-text {
+  color: #333 !important;
+}
+
+.dark-mode .notion-list-collection .notion-page-link:hover .notion-page-title-text {
+  color: white !important;
+}
+
+/* Style blue multi-select items */
+.notion-property-multi_select-item.notion-item-blue {
+  color: #284B61 !important;
+  font-size: 11px !important;
+}
+
+.dark-mode .notion-property-multi_select-item.notion-item-blue {
+  background-color: #284B61 !important;
+  color: white !important;
+  font-size: 11px !important;
+}
+
+.notion-property-multi_select-item.notion-item-brown {
+  color: #613B2C !important;
+  font-size: 11px !important;
+}
+
+.dark-mode .notion-property-multi_select-item.notion-item-brown {
+  background-color: #613B2C !important;
+  color: white !important;
+  font-size: 11px !important;
+}
+
+.notion-property-multi_select-item.notion-item-pink {
+  color: #672F49 !important;
+  font-size: 11px !important;
+}
+
+.dark-mode .notion-property-multi_select-item.notion-item-pink {
+  background-color: #672F49 !important;
+  color: white !important;
+  font-size: 11px !important;
+}
+
+.notion-property-multi_select-item.notion-item-orange {
+  color: #784722 !important;
+  font-size: 11px !important;
+}
+
+.dark-mode .notion-property-multi_select-item.notion-item-orange {
+  background-color: #784722 !important;
+  color: white !important;
+  font-size: 11px !important;
+}
+
+.notion-property-multi_select-item.notion-item-purple {
+  color: #4A2F63 !important;
+  font-size: 11px !important;
+}
+
+.dark-mode .notion-property-multi_select-item.notion-item-purple {
+  background-color: #4A2F63 !important;
+  color: white !important;
+  font-size: 11px !important;
+}
+
+.notion-property-multi_select-item.notion-item-red {
+  color: #733534 !important;
+  font-size: 11px !important;
+}
+
+.dark-mode .notion-property-multi_select-item.notion-item-red {
+  background-color: #733534 !important;
+  color: white !important;
+  font-size: 11px !important;
+}
+
+.notion-property-multi_select-item.notion-item-green {
+  color: #27593E !important;
+  font-size: 11px !important;
+}
+
+.dark-mode .notion-property-multi_select-item.notion-item-green {
+  background-color: #27593E !important;
+  color: white !important;
+  font-size: 11px !important;
+}
+
+/* Remove underlines from links in specific notion block */
+.notion-text.notion-block-1fe2da4f919f8070ae02e04d3d9b6424 .notion-link,
+.notion-text.notion-block-1fe2da4f919f8070ae02e04d3d9b6424 a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  background-image: none !important;
+  background-size: 0 !important;
+}
+
+.notion-text.notion-block-1fe2da4f919f8070ae02e04d3d9b6424 .notion-link:hover,
+.notion-text.notion-block-1fe2da4f919f8070ae02e04d3d9b6424 .notion-link:focus,
+.notion-text.notion-block-1fe2da4f919f8070ae02e04d3d9b6424 a:hover,
+.notion-text.notion-block-1fe2da4f919f8070ae02e04d3d9b6424 a:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  background-image: none !important;
+  background-size: 0 !important;
+}
