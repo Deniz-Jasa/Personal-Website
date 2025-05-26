@@ -72,9 +72,9 @@
 }
 
 .notion-gallery-grid {
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 6vmin;
-  gap: 6vmin;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
 }
 
 .notion-gallery-grid .notion-page-icon-inline {
@@ -96,8 +96,64 @@
 }
 
 .notion-collection-card {
-  border-radius: 16px;
+  border-radius: 2px;
   box-shadow: none;
+}
+
+.notion-collection-header-title {
+  font-size: 1.6rem;
+}
+
+.notion-gallery-grid notion-gallery-grid-size-medium {
+  margin-bottom: 30px;
+}
+
+/* Style for medium-sized collection cards with rounded colored background */
+.notion-collection-card.notion-collection-card-size-medium {
+  background-color: #f8f9fa !important;
+  border-radius: 10px !important;
+  padding: 0 !important;
+  border: 1px solid #e9ecef !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  overflow: hidden !important;
+}
+
+/* Dark mode styles for collection cards */
+.dark-mode .notion-collection-card.notion-collection-card-size-medium {
+  background-color: #262626 !important;
+  border: 1px solid #2D2D2D !important;
+}
+
+/* Text colors for light mode */
+.notion-collection-card.notion-collection-card-size-medium .notion-page-title-text {
+  color: #333333 !important;
+  font-size: 1rem !important;
+}
+
+.notion-collection-card.notion-collection-card-size-medium .notion-collection-card-property {
+  color: #666666 !important;
+  font-size: 13px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.notion-collection-card.notion-collection-card-size-medium .notion-property-text {
+  color: #666666 !important;
+  font-size: 12px !important;
+}
+
+/* Dark mode text colors */
+.dark-mode .notion-collection-card.notion-collection-card-size-medium .notion-page-title-text {
+  color: white !important;
+}
+
+.dark-mode .notion-collection-card.notion-collection-card-size-medium .notion-collection-card-property {
+  color: #cccccc !important;
+}
+
+.dark-mode .notion-collection-card.notion-collection-card-size-medium .notion-property-text {
+  color: #cccccc !important;
 }
 
 .notion-collection-card-cover img {
@@ -111,6 +167,26 @@
 .notion-collection-card-cover {
   border-radius: 0px;
   box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);
+}
+
+.notion-gallery {
+  margin-bottom: 50px;
+}
+
+/* Remove borders and styling from cover images in medium cards */
+.notion-collection-card.notion-collection-card-size-medium .notion-collection-card-cover {
+  border-radius: 8px 8px 0 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.notion-collection-card.notion-collection-card-size-medium .notion-collection-card-cover img {
+  border-radius: 8px 8px 0 0 !important;
+  border: none !important;
+  width: 100% !important;
+  object-fit: cover !important;
 }
 
 .notion-header .breadcrumb:not(.active):hover {
@@ -128,8 +204,63 @@
   filter: brightness(120%);
 }
 
+/* Make the entire card background lighter on hover for medium cards */
+.notion-collection-card.notion-collection-card-size-medium:hover {
+  background-color: #e9ecef !important;
+  transition: background-color 150ms ease !important;
+}
+
+/* Dark mode hover effect */
+.dark-mode .notion-collection-card.notion-collection-card-size-medium:hover {
+  background-color: #333333 !important;
+}
+
 .notion-collection-card-body {
   padding: 10px;
+}
+
+.dark-mode .notion-file-icon {
+  color: white !important;
+  fill: white !important;
+}
+
+/* Make specific images non-clickable */
+.notion-block-1fe2da4f919f808da91ad2b2e13b74b5.notion-asset-wrapper.notion-asset-wrapper-image {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+.notion-block-1fe2da4f919f808da91ad2b2e13b74b5.notion-asset-wrapper.notion-asset-wrapper-image * {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+.notion-block-1fe2da4f919f808da91ad2b2e13b74b5 * {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+/* Make another specific image block non-clickable */
+.notion-block-0c1901cc57e644308b479ff032444d38.notion-asset-wrapper.notion-asset-wrapper-image {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+.notion-block-0c1901cc57e644308b479ff032444d38.notion-asset-wrapper.notion-asset-wrapper-image * {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+.notion-block-0c1901cc57e644308b479ff032444d38 * {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+/* Style the card body for medium cards */
+.notion-collection-card.notion-collection-card-size-medium .notion-collection-card-body {
+  padding: 16px !important;
+  border: none !important;
+  background: transparent !important;
 }
 
 .notion-list-body {
@@ -674,4 +805,9 @@
   border-bottom: none !important;
   background-image: none !important;
   background-size: 0 !important;
+}
+
+/* Remove border-top from gallery grid medium size */
+.notion-gallery-grid.notion-gallery-grid-size-medium {
+  border-top: none !important;
 }
