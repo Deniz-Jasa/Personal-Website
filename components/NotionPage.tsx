@@ -221,7 +221,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
   const socialImage = mapImageUrl(
     getPageProperty<string>('Social Image', block, recordMap) ||
       (block as PageBlock).format?.page_cover ||
-      config.defaultPageCover,
+      config.defaultPageCover ||
+      null,
     block
   )
 
