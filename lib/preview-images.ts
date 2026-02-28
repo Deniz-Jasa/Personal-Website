@@ -12,11 +12,17 @@ import { mapImageUrl } from './map-image-url'
 export async function getPreviewImageMap(
   recordMap: ExtendedRecordMap
 ): Promise<PreviewImageMap> {
-  const urls: string[] = getPageImageUrls(recordMap, {
-    mapImageUrl
-  })
-    .concat([defaultPageIcon, defaultPageCover])
-    .filter(Boolean)
+  let urls: string[]
+  try {
+    urls = getPageImageUrls(recordMap, {
+      mapImageUrl
+    })
+      .concat([defaultPageIcon, defaultPageCover])
+      .filter(Boolean)
+  } catch (err) {
+    console.warn('failed to get page image urls', err.message)
+    urls = [defaultPageIcon, defaultPageCover].filter(Boolean)
+  }
 
   const previewImagesMap = Object.fromEntries(
     await pMap(
