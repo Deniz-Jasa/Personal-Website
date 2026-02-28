@@ -26,6 +26,39 @@ import { PageHead } from './PageHead'
 import styles from './styles.module.css'
 
 // -----------------------------------------------------------------------------
+// Error boundary for graceful rendering failures
+// -----------------------------------------------------------------------------
+
+class NotionRendererErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props)
+    this.state = { hasError: false }
+  }
+
+  static getDerivedStateFromError(): { hasError: boolean } {
+    return { hasError: true }
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error('NotionRenderer error:', error, errorInfo)
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: '2rem', textAlign: 'center' }}>
+          Page content failed to load. Please try refreshing.
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
+
+// -----------------------------------------------------------------------------
 // dynamic imports for optional components
 // -----------------------------------------------------------------------------
 
@@ -69,10 +102,12 @@ const Code = dynamic(() =>
   })
 )
 
-const Collection = dynamic(() =>
-  import('react-notion-x/build/third-party/collection').then(
-    (m) => m.Collection
-  )
+const Collection = dynamic(
+  () =>
+    import('react-notion-x/build/third-party/collection').then(
+      (m) => m.Collection
+    ),
+  { ssr: false }
 )
 const Equation = dynamic(() =>
   import('react-notion-x/build/third-party/equation').then((m) => m.Equation)
@@ -245,29 +280,31 @@ export const NotionPage: React.FC<types.PageProps> = ({
       {isDarkMode && <BodyClassName className='dark-mode' />}
       
 
-      <NotionRenderer
-        bodyClassName={cs(
-          styles.notion,
-          
-          pageId === site.rootNotionPageId && 'index-page'
-        )}
-        darkMode={isDarkMode}
-        components={components}
-        recordMap={recordMap}
-        rootPageId={site.rootNotionPageId}
-        rootDomain={site.domain}
-        fullPage={!isLiteMode}
-        previewImages={false} //!!recordMap.preview_images
-        showCollectionViewDropdown={false}
-        showTableOfContents={showTableOfContents}
-        minTableOfContentsItems={minTableOfContentsItems}
-        defaultPageIcon={config.defaultPageIcon}
-        defaultPageCover={config.defaultPageCover}
-        defaultPageCoverPosition={config.defaultPageCoverPosition}
-        mapPageUrl={siteMapPageUrl}
-        mapImageUrl={mapImageUrl}
-        searchNotion={config.isSearchEnabled ? searchNotion : null}
-      />
+      <NotionRendererErrorBoundary>
+        <NotionRenderer
+          bodyClassName={cs(
+            styles.notion,
+            
+            pageId === site.rootNotionPageId && 'index-page'
+          )}
+          darkMode={isDarkMode}
+          components={components}
+          recordMap={recordMap}
+          rootPageId={site.rootNotionPageId}
+          rootDomain={site.domain}
+          fullPage={!isLiteMode}
+          previewImages={false} //!!recordMap.preview_images
+          showCollectionViewDropdown={false}
+          showTableOfContents={showTableOfContents}
+          minTableOfContentsItems={minTableOfContentsItems}
+          defaultPageIcon={config.defaultPageIcon}
+          defaultPageCover={config.defaultPageCover}
+          defaultPageCoverPosition={config.defaultPageCoverPosition}
+          mapPageUrl={siteMapPageUrl}
+          mapImageUrl={mapImageUrl}
+          searchNotion={config.isSearchEnabled ? searchNotion : null}
+        />
+      </NotionRendererErrorBoundary>
       
     </>
   )
